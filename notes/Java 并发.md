@@ -740,6 +740,7 @@ java.util.concurrent（J.U.C）大大提高了并发性能，AQS 被认为是 J.
 
 ```java
 public class CountdownLatchExample {
+
     public static void main(String[] args) throws InterruptedException {
         final int totalThread = 10;
         CountDownLatch countDownLatch = new CountDownLatch(totalThread);
@@ -788,6 +789,7 @@ public CyclicBarrier(int parties) {
 
 ```java
 public class CyclicBarrierExample {
+
     public static void main(String[] args) {
         final int totalThread = 10;
         CyclicBarrier cyclicBarrier = new CyclicBarrier(totalThread);
@@ -822,6 +824,7 @@ Semaphore 类似于操作系统中的信号量，可以控制对互斥资源的�
 
 ```java
 public class SemaphoreExample {
+
     public static void main(String[] args) {
         final int clientCount = 3;
         final int totalRequestCount = 10;
@@ -866,6 +869,7 @@ FutureTask 可用于异步获取执行结果或取消执行任务的场景。当
 
 ```java
 public class FutureTaskExample {
+
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         FutureTask<Integer> futureTask = new FutureTask<Integer>(new Callable<Integer>() {
             @Override
@@ -971,6 +975,7 @@ produce..produce..consume..consume..produce..consume..produce..consume..produce.
 
 ```java
 public class ForkJoinExample extends RecursiveTask<Integer> {
+
     private final int threshold = 5;
     private int first;
     private int last;
@@ -1275,7 +1280,7 @@ Thread 对象的结束先行发生于 join() 方法返回。
 
 # 十一、线程安全
 
-多个线程不管以何种方式访问某个类，并在在主调代码中不需要进行同步，都能表现正确的行为。
+多个线程不管以何种方式访问某个类，并且在主调代码中不需要进行同步，都能表现正确的行为。
 
 线程安全有以下几种实现方式：
 
